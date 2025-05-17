@@ -8,19 +8,19 @@
 	<script src="/postlist.js"></script>
 	<script>
 		getPostList().then(posts => {
-		const container = document.getElementById('post-list');
-		posts.forEach(post => {
-		const el = document.createElement('div');
-		el.innerHTML = `
-			<div style="margin-bottom: 1em;">
+			const container = document.getElementById('post-list');
+			posts.forEach(post => {
+			const el = document.createElement('div');
+			el.innerHTML = `
+				<div style="margin-bottom: 1em;">
 					<a href="/posts/${post.filename}" style="color: white;">
-					<h3>${post.title}</h3>
+						<h3>${post.title}</h3>
 						<img src="${post.image}" alt="${post.title}" style="max-width: 100%; height: auto;" />
-					<p>${post.description}</p>
-				</a>
-			</div>
-		`;
-		container.appendChild(el);
+						<p>${post.description}</p>
+					</a>
+				</div>
+			`;
+			container.appendChild(el);
 		});
 	});
 	</script>
