@@ -57,3 +57,19 @@ h1, h2, h3 {
 .post-content {
   line-height: 1.6;
 }
+
+.post-box {
+  border: 1px solid gray;       /* Gray border */
+  padding: 1em;                 /* Space inside the box */
+  margin-bottom: 1.5em;         /* Space below each post */
+  border-radius: 6px;           /* Rounded corners for nicer look */
+  background-color: #111;       /* Slightly lighter black for contrast */
+  box-shadow: 0 0 5px #222;    /* Optional subtle shadow */
+}
+.post-box a {
+  color: white;
+  text-decoration: none;
+}
+.post-box a:hover {
+  text-decoration: underline;
+}
