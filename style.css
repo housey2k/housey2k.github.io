@@ -1,0 +1,47 @@
+/* style.css */
+body {
+  background-color: #000;
+  color: #eee;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0 20px;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1em 0;
+  background-color: #111;
+  border-bottom: 1px solid #333;
+}
+
+a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+h1, h2, h3 {
+  margin: 0.5em 0;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  margin-bottom: 0.5em;
+}
+
+.post-content {
+  line-height: 1.6;
+}
