@@ -1,4 +1,11 @@
 /* style.css */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* makes sizing more intuitive */
+}
+
 body {
   background-color: #000;
   color: #eee;
@@ -12,19 +19,19 @@ header, footer {
   padding: 1em 0;
   background-color: #111;
   border-bottom: 1px solid #333;
+  max-width: 1000px;       /* prevent stretching too wide */
+  margin: 0 auto;
 }
 
 header {
-  text-align: center;
   padding: 2em 0;
   background-image: url('/images/headerbg.png'); /* <-- Replace with your image file */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #fff; /* Makes header text readable on image */
+  color: #fff;
   border-bottom: 1px solid #333;
 }
-
 
 a {
   color: #1e90ff;
@@ -37,7 +44,7 @@ a:hover {
 
 .container {
   max-width: 800px;
-  margin: auto;
+  margin: 0 auto;
   padding: 20px 0;
 }
 
@@ -59,17 +66,49 @@ h1, h2, h3 {
 }
 
 .post-box {
-  border: 1px solid gray;       /* Gray border */
-  padding: 1em;                 /* Space inside the box */
-  margin-bottom: 1.5em;         /* Space below each post */
-  border-radius: 6px;           /* Rounded corners for nicer look */
-  background-color: #111;       /* Slightly lighter black for contrast */
-  box-shadow: 0 0 5px #222;    /* Optional subtle shadow */
+  border: 1px solid gray;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  border-radius: 6px;
+  background-color: #111;
+  box-shadow: 0 0 5px #222;
+  max-width: 100%; /* make sure it never stretches beyond container */
+  overflow-wrap: break-word; /* avoid overflow on long words */
 }
+
 .post-box a {
   color: white;
   text-decoration: none;
 }
+
 .post-box a:hover {
   text-decoration: underline;
+}
+
+/* New styles to control images */
+img {
+  max-width: 100%;  /* prevents images from exceeding container width */
+  height: auto;     /* keep aspect ratio */
+  display: block;   /* remove inline gap */
+  margin: 0 auto;   /* center images if inside block containers */
+}
+
+/* Optional: constrain large elements globally */
+section, article, main, aside {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  body {
+    padding: 0 10px;
+  }
+
+  .container, section, article, main, aside {
+    max-width: 100%;
+    padding: 0 5px;
+  }
 }

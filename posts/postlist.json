@@ -1,5 +1,17 @@
 [
   {
+    "title": "Hacking a MT1389 based CD/DVD drive",
+    "filename": "/posts/hardware-hacking/MT1389-1.html",
+    "image": "/posts/hardware-hacking-img/MT1389QE.jpg",
+    "description": "[WIP] hack of a CD drive with the goal of displaying a message on the VFD display maybe outputting something through AV"
+  },
+  {
+    "title": "template",
+    "filename": "/posts/personal/test.html",
+    "image": "/posts/personal-img/test.png",
+    "description": "just a test :3"
+  },
+  {
     "title": "First post :3",
     "filename": "/posts/personal/housey2k.html",
     "image": "/posts/personal-img/housey2k.png",
