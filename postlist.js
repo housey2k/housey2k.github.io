@@ -5,6 +5,7 @@ function getPostList(jsonPath = '/posts/posts.json') {
     .then(response => {
       if (!response.ok) {
         throw new Error(`Failed to fetch post list: ${response.statusText}`);
+		alert("check console");
       }
       return response.json();
     })
@@ -18,6 +19,7 @@ function getPostList(jsonPath = '/posts/posts.json') {
     })
     .catch(err => {
       console.error('Error loading posts:', err);
+	  alert("check console");
       return [];
     });
 }
