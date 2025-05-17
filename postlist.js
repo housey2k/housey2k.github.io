@@ -1,6 +1,6 @@
 // getPostList.js
 
-function getPostList(jsonPath = '/posts/posts.json') {
+function getPostList(jsonPath = '/posts/postlist.json') {
   return fetch(jsonPath)
     .then(response => {
       if (!response.ok) {
