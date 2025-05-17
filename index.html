@@ -9,11 +9,12 @@
 	<script>
 		getPostList().then(posts => {
 			const container = document.getElementById('post-list');
+			console.log(posts)
 			posts.forEach(post => {
 			const el = document.createElement('div');
 			el.innerHTML = `
 				<div style="margin-bottom: 1em;">
-					<a href="/posts/${post.filename}" style="color: white;">
+					<a href="${post.filename}" style="color: white;">
 						<h3>${post.title}</h3>
 						<img src="${post.image}" alt="${post.title}" style="max-width: 100%; height: auto;" />
 						<p>${post.description}</p>
