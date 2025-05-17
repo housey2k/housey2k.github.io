@@ -14,7 +14,8 @@ function getPostList(jsonPath = '/posts/postlist.json') {
         title: post.title || 'Untitled',
         image: post.image || '', // e.g. '/posts/img1.jpg'
         description: post.description || '',
-        filename: post.filename || '#'
+        filename: post.filename || '#',
+		alt: post.alt || ''
       }));
     })
     .catch(err => {
