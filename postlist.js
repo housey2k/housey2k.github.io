@@ -5,7 +5,6 @@ function getPostList(jsonPath = '/posts/postlist.json') {
     .then(response => {
       if (!response.ok) {
         throw new Error(`Failed to fetch post list: ${response.statusText}`);
-		alert("check console");
       }
       return response.json();
     })
@@ -20,7 +19,28 @@ function getPostList(jsonPath = '/posts/postlist.json') {
     })
     .catch(err => {
       console.error('Error loading posts:', err);
-	  alert("check console");
       return [];
     });
 }
+
+function renderPostList(posts, containerId) {
+	const container = document.getElementById(containerId);
+	if (!container) {
+		console.error(`Element with ID "${containerId}" not found.`);
+		return;
+	}
+
+	posts.forEach(post => {
+		const el = document.createElement('div');
+		el.classList.add('post-box');
+		el.innerHTML = `
+			<a href="${post.filename}">
+				<h3>${post.title}</h3>
+				<img src="${post.image}" alt="${post.alt}" style="max-width: 100%; height: auto;" />
+				<p>${post.description}</p>
+			</a>
+		`;
+		container.appendChild(el);
+	});
+}
+

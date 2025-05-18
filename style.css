@@ -24,13 +24,26 @@ header, footer {
 }
 
 header {
+  position: relative; /* needed for the overlay positioning */
   padding: 2em 0;
-  background-image: url('/images/headerbg.png'); /* <-- Replace with your image file */
+  background-image: url('/images/headerbg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
   border-bottom: 1px solid #333;
+  z-index: 0; /* make sure it's behind the content */
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent gray */
+  z-index: -1; /* behind the header content */
 }
 
 a {

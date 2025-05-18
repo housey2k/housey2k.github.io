@@ -5,26 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>house's electronics blog</title>
 	<link rel="stylesheet" href="/style.css" />
+	
+	<script src="/fhscript.js"></script>
 	<script src="/postlist.js"></script>
-	<script>
-		getPostList().then(posts => {
-			const container = document.getElementById('post-list');
-			console.log(posts)
-			posts.forEach(post => {
-				const el = document.createElement('div');
-					el.classList.add('post-box');
-					el.innerHTML = `
-						<a href="${post.filename}">
-							<h3>${post.title}</h3>
-							<img src="${post.image}" alt="${post.title}" style="max-width: 100%; height: auto;" />
-							<p>${post.description}</p>
-						</a>
-					`;
-
-			container.appendChild(el);
-		});
-	});
-	</script>
 </head>
 <body>
 	<header>
@@ -38,8 +21,18 @@
 		<h2>Recent Posts</h2>
 		<div id="post-list"></div>
 	</main>
-	<footer>
-		<p>:)</p>
-	</footer>
+	<footer id="footer-placeholder"></footer>
+	
+	<script>
+	  editPlaceholder('header-placeholder', '/header.html');
+	  editPlaceholder('footer-placeholder', '/footer.html');
+	</script>
+	
+	<script>
+		(async () => {
+			const posts = await getPostList();
+			renderPostList(posts, "post-list")
+		})();
+	</script>
 </body>
 </html>

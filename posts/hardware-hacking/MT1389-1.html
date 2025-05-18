@@ -1,62 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Housey2k's blog</title>
-  <link rel="stylesheet" href="/style.css" />
-  <script src="/postlist.js"></script>
-  <script>
-    getPostList().then(posts => {
-      const container = document.getElementById('post-list');
-      console.log(posts)
-      posts.forEach(post => {
-        const el = document.createElement('div');
-        el.classList.add('post-box');
-        el.innerHTML = `
-          <a href="${post.filename}">
-            <h3>${post.title}</h3>
-            <img src="${post.image}" alt="${post.title}" style="max-width: 100%; height: auto;" />
-            <p>${post.description}</p>
-          </a>
-        `;
-        container.appendChild(el);
-		});
-	});
-  </script>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Housey2k's blog</title>
+	<link rel="stylesheet" href="/style.css" />
+	
+	<script src="/fhscript.js"></script>
+	<script src="/postlist.js"></script>
 </head>
 <body>
-  <header>
-    <h1>housey2k</h1>
-    <nav>
-      <a href="/">Home</a>
-	  <a href="/posts.html">Posts</a>
-    </nav>
-  </header>
-  <main class="container">
-    <article>
-      <h2>Housey2k</h2>
-      <p><em>Posted on 17/05/2025</em></p>
-      <div class="post-content">
-		<img src="/posts/hardware-hacking-img/MT1389QE.jpg" alt="MT1389 chip" title="the chip we're diddling"/>
+	<header id="header-placeholder"></header>
+
+	<main class="container">
+		<article>
+		<h2>Housey2k</h2>
+		<p><em>Posted on 17/05/2025</em></p>
+		<div class="post-content">
+			<img src="/posts/hardware-hacking-img/MT1389QE.jpg" alt="MT1389 chip" title="the chip we're diddling"/>
 		
-		<p>Recently, I found a CD/DVD player in my scrap pile that I don't have the model or much info about (I threw away the casing and kept the circuits). It was missing the actual reader unit; it only has a VFD screen, the main board, and a SMPS board.</p>
-		<p>The goal of this project is to hack the firmware that I believe is stored in the A29L040L EEPROM chip located next to the main chip. I don't have a parallel programmer yet, so I'm waiting for an STM32 Bluepill to use as a programmer. I also plan on putting a PLCC32 socket on the motherboard so I don't have to keep reheating the board or EEPROM.</p>
-		<p>CN3 appears to be a UART interface, but I couldn't see any data coming through any of the pins.</p>
-		<p>I'll be putting here some files I found during OSINT that might be useful:</p>
+			<p>Recently, I found a CD/DVD player in my scrap pile that I don't have the model or much info about (I threw away the casing and kept the circuits). It was missing the actual reader unit; it only has a VFD screen, the main board, and a SMPS board.</p>
+			<p>The goal of this project is to hack the firmware that I believe is stored in the A29L040L EEPROM chip located next to the main chip. I don't have a parallel programmer yet, so I'm waiting for an STM32 Bluepill to use as a programmer. I also plan on putting a PLCC32 socket on the motherboard so I don't have to keep reheating the board or EEPROM.</p>
+			<p>CN3 appears to be a UART interface, but I couldn't see any data coming through any of the pins.</p>
+			<p>I'll be putting here some files I found during OSINT that might be useful:</p>
 
-		<ul>
-			<li><a href="/docs/schematics/MT1389DE.pdf">DVD player using the MT1389DE IC</a></li>
-			<li><a href="/docs/datasheets/MT1389FE.pdf">Datasheet for the MT1389FE IC</a></li>
-		</ul>
+			<ul>
+				<li><a href="/docs/schematics/MT1389DE.pdf">DVD player using the MT1389DE IC</a></li>
+				<li><a href="/docs/datasheets/MT1389FE.pdf">Datasheet for the MT1389FE IC</a></li>
+			</ul>
 
-      </div>
-    </article>
-	<h2>Recommended posts</h2>
-	<div id="post-list"></div>
-  </main>
-  <footer>
-    <p>:3</p>
-  </footer>
+		</div>
+		</article>
+		
+		<section>
+			<h2>Recommended posts</h2>
+			<div id="post-list"></div>
+		</section>
+	</main>
+	<footer id="footer-placeholder"></footer>
+	
+	<script>
+	  editPlaceholder('header-placeholder', '/header.html');
+	  editPlaceholder('footer-placeholder', '/footer.html');
+	</script>
+	
+	<script>
+		(async () => {
+			const posts = await getPostList();
+			renderPostList(posts, "post-list")
+		})();
+	</script>
 </body>
 </html>
