@@ -9,3 +9,4 @@ Disallow: /header.html
 Disallow: /*.js$
 Disallow: /*.css$
 Disallow: /*.json$
+Disallow: /*.bat$

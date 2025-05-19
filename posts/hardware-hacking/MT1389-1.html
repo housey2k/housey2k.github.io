@@ -14,25 +14,31 @@
 
 	<main class="container">
 		<article>
-		<h2>Hacking a MT1389 based CD/DVD drive</h2>
-		<p><em>Posted on 17/05/2025</em></p>
-		<div class="post-content">
-			<img src="/posts/hardware-hacking-img/MT1389QE.jpg" alt="MT1389 chip" title="the chip we're diddling"/>
-		
-			<p>Recently, I found a CD/DVD player in my scrap pile that I don't have the model or much info about (I threw away the casing and kept the circuits). It was missing the actual reader unit; it only has a VFD screen, the main board, and a SMPS board.</p>
-			<p>The goal of this project is to hack the firmware that I believe is stored in the A29L040L EEPROM chip located next to the main chip. I don't have a parallel programmer yet, so I'm waiting for an STM32 Bluepill to use as a programmer. I also plan on putting a PLCC32 socket on the motherboard so I don't have to keep reheating the board or EEPROM.</p>
-			<p>CN3 appears to be a UART interface, but I couldn't see any data coming through any of the pins.</p>
-			<p>I'll be putting here some files I found during OSINT that might be useful:</p>
-			
-			<p>edit: my STM32 might arrive this week</p>
-			
-			<ul>
-				<li><a href="/docs/schematics/MT1389DE.pdf">DVD player using the MT1389DE IC</a></li>
-				<li><a href="/docs/datasheets/MT1389FE.pdf">Datasheet for the MT1389FE IC</a></li>
-			</ul>
+			<h2>Hacking an MT1389-Based CD/DVD Drive</h2>
+			<p><em>Posted on 17/05/2025</em></p>
+			<div class="post-content">
+				<img src="/posts/hardware-hacking-img/MT1389QE.jpg" alt="MT1389 chip" title="The chip we're exploring" />
 
-		</div>
+				<p>Recently, I dug out a CD/DVD player from my scrap pile, though I no longer have the model info (I tossed the casing a while back and just kept the boards). The unit was missing the actual optical drive, but it still had the VFD display, mainboard, and SMPS board intact.</p>
+				<p>The goal of this project is to dump and analyze the firmware, which I believe is stored in the A29L040L EEPROM located next to the main MT1389QE chip. I don’t have a parallel programmer at the moment, so I’m waiting on an STM32 Bluepill to arrive, which I plan to use as a programmer. I’m also planning to install a PLCC32 socket on the board so I can remove the EEPROM easily without having to keep reheating the board.</p>
+				<p>There’s a connector labeled CN3 that looks like a UART interface, but so far I haven’t seen any data coming from any of the pins.</p>
+				<p>Here are some documents I found during OSINT that might be useful for understanding or reverse engineering the system:</p>
+
+				<ul>
+					<li><a href="/docs/schematics/MT1389DE.pdf">DVD player schematic using the MT1389DE IC</a></li>
+					<li><a href="/docs/datasheets/MT1389FE.pdf">MT1389FE IC datasheet</a></li>
+				</ul>
+				
+				<br />
+
+				<img src="/posts/hardware-hacking-img/SPHE8200A.jpeg" alt="SPHE8200A chip on another DVD board" title="Another DVD chipset" />
+				<p>I also came across another CD/DVD player board based on a different IC—the SPHE8200A, which, like the MT1389, is RISC-based. This board doesn’t have a VFD, but it does include two flash memory chips: a PLCC32 and a TSOP28. I’m not entirely sure of their roles, but my guess is that the PLCC32 holds the low-level firmware, while the TSOP28 contains a higher-level OS or application layer.</p>
+				<p>There's also an SPHE6300A chip on this board. I wasn’t able to find much documentation on it, but given that it’s connected to the FFC that runs to the laser head, I suspect it’s handling the optical pickup functionality.</p>
+
+				<p>Since both boards use CPUs based on the same architecture, they likely share the same instruction set and could potentially be debugged via JTAG in a similar way. For now, I’m focusing on the MT1389QE-based board—it’s simpler, with only one EEPROM and a cleaner layout to work with.</p>
+			</div>
 		</article>
+
 		
 		<section>
 			<h2>Recommended posts</h2>
