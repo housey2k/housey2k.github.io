@@ -19,10 +19,7 @@
 		<p>This website is full of personality, sorry for the mess (:</p>
 		<p>Also the code behind all the pages is chaotic. I'm sorry, I'm used to doing low effort backends and microcontrollers.</p>
 
-		<section>
-			<h2>Recommended posts</h2>
-			<div id="post-list"></div>
-		</section>
+		<section id="post-list-placeholder"></section>
 	</main>
 	
 	<footer id="footer-placeholder"></footer>
@@ -30,13 +27,9 @@
 	<script>
 	  editPlaceholder('header-placeholder', '/header.html');
 	  editPlaceholder('footer-placeholder', '/footer.html');
-	</script>
-	
-	<script>
-		(async () => {
-			const posts = await getPostList();
-			renderPostList(posts, "post-list")
-		})();
+	  editPlaceholder('post-list-placeholder', '/post-list.html'); // load generics
+	  
+	  postmain(); // postlist.js load recommended posts
 	</script>
 </body>
 </html>

@@ -12,29 +12,18 @@
   <script src="/analytics.js"></script>
 </head>
 <body>
-	<header>
-		<h1>housey2k</h1>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/posts.html">Posts</a>
-		</nav>
-	</header>
+	<header id="header-placeholder"></header>
 	<main class="container">
-		<h2>Recent Posts</h2>
-		<div id="post-list"></div>
+		<section id="post-list-placeholder"></section>
 	</main>
 	<footer id="footer-placeholder"></footer>
 	
 	<script>
 	  editPlaceholder('header-placeholder', '/header.html');
 	  editPlaceholder('footer-placeholder', '/footer.html');
-	</script>
-	
-	<script>
-		(async () => {
-			const posts = await getPostList();
-			renderPostList(posts, "post-list")
-		})();
+	  editPlaceholder('post-list-placeholder', '/post-list.html'); // load generics
+	  
+	  postmain(); // postlist.js load recommended posts
 	</script>
 </body>
 </html>

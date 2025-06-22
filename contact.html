@@ -23,17 +23,5 @@
 	</main>
 	
 	<footer id="footer-placeholder"></footer>
-	
-	<script>
-	  editPlaceholder('header-placeholder', '/header.html');
-	  editPlaceholder('footer-placeholder', '/footer.html');
-	</script>
-	
-	<script>
-		(async () => {
-			const posts = await getPostList();
-			renderPostList(posts, "post-list")
-		})();
-	</script>
 </body>
 </html>

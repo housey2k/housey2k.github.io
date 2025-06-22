@@ -44,3 +44,10 @@ function renderPostList(posts, containerId) {
 	});
 }
 
+function postmain() {
+	(async () => {
+		const posts = await getPostList();
+		renderPostList(posts, "post-list")
+	})();
+}
+

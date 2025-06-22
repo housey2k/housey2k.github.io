@@ -44,23 +44,16 @@
 		</article>
 
 		
-		<section>
-			<h2>Recommended posts</h2>
-			<div id="post-list"></div>
-		</section>
+		<section id="post-list-placeholder"></section>
 	</main>
 	<footer id="footer-placeholder"></footer>
 	
 	<script>
 	  editPlaceholder('header-placeholder', '/header.html');
 	  editPlaceholder('footer-placeholder', '/footer.html');
-	</script>
-	
-	<script>
-		(async () => {
-			const posts = await getPostList();
-			renderPostList(posts, "post-list")
-		})();
+	  editPlaceholder('post-list-placeholder', '/post-list.html'); // load generics
+	  
+	  postmain(); // postlist.js load recommended posts
 	</script>
 </body>
 </html>
