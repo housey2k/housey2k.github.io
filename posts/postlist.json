@@ -1,5 +1,12 @@
 [
   {
+	 "title": "Trying to hack into a Realtek based router through JTAG",
+    "filename": "/posts/hardware-hacking/Realtek-RTL8672.html",
+    "image": "/posts/hardware-hacking-img/OiRTLRouter.jpg",
+    "description": "[WIP] An attempt of hacking into a Realtek based OEM router",
+    "alt": "Router board picture"
+  },
+  {
     "title": "Hacking a MT1389 based CD/DVD drive",
     "filename": "/posts/hardware-hacking/MT1389-1.html",
     "image": "/posts/hardware-hacking-img/MT1389QE.jpg",
