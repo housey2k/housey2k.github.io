@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Housey2k's blog</title>
+	<link rel="stylesheet" href="/style.css" />
+	<script src="/fhscript.js"></script>
+	<script src="/postlist.js"></script>
+  
+  <script src="/analytics.js"></script>
+</head>
+<body>
+	<header id="header-placeholder"></header>
+	
+	<main class="container">
+		<article>
+			<h2>Pictures of an elevator electrical panel</h2>
+			<p><em>Posted on 27/06/2025</em></p>
+			<div class="post-content">
+				<p>Some months ago some guys were fixing the school elevator, thought i was drowing in shyness, i made sure to take some pictures of the panel :3</p>
+				<p>They told me the issue was on the stop sensor</p>
+				
+				<p>We can see a big transformer on top left for the low voltage side</p>
+				<p>Some contactors and MCBs down left</p>
+				<p>A custom PCB on the top right for the elevator logic (The brand is "ELEVATOR", brilliant)</p>
+				<p>Something that maybe looks like a PLC on center left</p>
+				<p>Some relay boards below the main PCB, and some boards next to the PLC that look like a mains rectifier considering the fuse holder, diodes (thought it looks like it's only 3 diodes instead of 4), a capacitor and an LED</p>
+				<p>Some custom connectors on the right, and terminal blocks down left</p>
+				<p>And lastly, the hydraulic pump (or HPU, which means Hydraulic Power Unit), which is the heart of this kind of elevator</p>
+				
+				<img src="/posts/silly-img/ElevatorPanelFull.jpg" />
+				<br />
+				<img src="/posts/silly-img/ElevatorLeft.jpg" />
+				<br />
+				<img src="/posts/silly-img/ElevatorHydraulics.jpg" />
+				
+			</div>
+		</article>
+		
+		<section id="post-list-placeholder"></section>
+	</main>
+	
+	<footer id="footer-placeholder"></footer>
+	
+	<script>
+	  editPlaceholder('header-placeholder', '/header.html');
+	  editPlaceholder('footer-placeholder', '/footer.html');
+	  editPlaceholder('post-list-placeholder', '/post-list.html'); // load generics
+	  
+	  postmain(); // postlist.js load recommended posts
+	</script>
+</body>
+</html>

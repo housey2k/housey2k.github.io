@@ -17,7 +17,7 @@
 	<main class="container">
 		<article>
 			<h2>Hacking an MT1389-Based CD/DVD Drive</h2>
-			<p><em>Posted on 17/05/2025</em></p>
+			<p><em>Posted on 17/05/2025 • Updated 27/06/25</em></p>
 			<div class="post-content">
 				<img src="/posts/hardware-hacking-img/MT1389QE.jpg" alt="MT1389 chip" title="The chip we're exploring" />
 
@@ -39,10 +39,11 @@
 
 				<p>Since both boards use CPUs based on the same architecture, they likely share the same instruction set and could potentially be debugged via JTAG in a similar way. For now, I’m focusing on the MT1389QE-based board—it’s simpler, with only one EEPROM and a cleaner layout to work with.</p>
 				
-				<p>This project is suspended because I am busy with studies, and also because i don't have a suitable PLCC programmer (and those are much more expensive than your average CH341A), maybe when I am able to buy some PLCC sockets i'll build one with my bluepill</p>
+				<p>Update: I’ve decided to completely abandon this project. The UART header doesn't output anything during boot, and the JTAG interface appears to be repurposed as GPIO, making proper debugging impractical. The firmware is stored in a PLCC32 parallel flash, which I can’t read without desoldering or investing in new sockets and a programmer — and frankly, it's not worth the hassle for something this minor.</p>
+				<p>I won't even attempt to read it using an STM32, as I don’t plan on buying sockets just for a throwaway project like this, and i'm NOT soldering a whole parallel bus back and forth between the original PCB and microcontroller. Instead, I’ll just salvage the SMPS module, some RCA and JST connectors, and the VFD display, which is based on a well-documented controller and should be fun to use with a microcontroller</p>
+				<p>Soon, I plan to hook up the VFD display to either an Arduino or an STM32 (depending on the controller's voltage requirements) and write a simple interface to display information. Once that’s done, I’ll publish a ready-to-use code example for anyone interested in reusing these displays in their own projects.</p>
 			</div>
 		</article>
-
 		
 		<section id="post-list-placeholder"></section>
 	</main>

