@@ -4,15 +4,14 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+![dr house :3](/post-img/housey2k.png "this is me btw :3 if u even care ^_^")
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Hey there, and thanks for stopping by my little corner of the internet.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+This is **Housey2k**, where I dive into all things electronics and hardware hacking — from cool DIY projects to the nitty-gritty behind the tech.
 
+Along the way, I also share some stories and insights from my **school life**, blending the world of circuits with everyday experiences.
 
-[jekyll-organization]: https://github.com/jekyll
+Whether you’re a fellow tinkerer, a tech-curious visitor, or just here to see what I’m up to, I’m excited to have you along for the ride.
+
+Let’s build, learn, and hack our way through this together!

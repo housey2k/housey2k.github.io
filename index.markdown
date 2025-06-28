@@ -1,6 +1,9 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
 ---
+
+## House's Blog
+
+### A blog on electronics development, repair, hardware hacking, programming, and more!
+
+### This website is full of personality — sorry for the mess (:
