@@ -20,12 +20,12 @@ The board has these 3 main ICs:
 * CF8566T LCD Driver.
 
 There is a 6 pin debug header on the board. Here is the pinout:
-1 - DBG
-2 - VCC (capacitive dropper output)
-3 - 3.3V
-4 - NC
-5 - NC
-6 - GND
+* 1 - DBG
+* 2 - VCC (capacitive dropper output)
+* 3 - 3.3V
+* 4 - NC
+* 5 - NC
+* 6 - GND
 
 The DBG pin is Zilog's authoral system for debugging their microcontrollers. It uses UART Half-Duplex for communication with automatic baud rate detection.
 
@@ -127,8 +127,8 @@ Zilog has an application note named [AN0117](/post-docs/an0117.pdf) that explain
 Sean developed software to dump their MCU using a raspberry pi, but they didn't release the full code.
 
 I love hardware, but I'm a terrible programmer, so I just explained all my situation to ChatGPT and managed to build a full STM32CubeIDE project with a bit of intervention by me.
-The code is avaiable on a [GitHub repository on my profile](github.com/housey2k/Z8F0421-Dump).
+The code is avaiable on a [GitHub repository on my profile](https://github.com/housey2k/Z8F0421-Dump).
 
 Now the only thing left is buying a breakout board and connecting the STM32 to the Z8.
 
-I really hope it works, I'd be able to display custom stuff on the LCD (This time with vanilla hardware, differently from my MT1389 post where I tossed the original board and hooked the VFD to an arduino), decode smart meter signals maybe, and maybe contribute with [Hash](recessim.com)'s efforts on reverse engineering smart meters
+I really hope it works, I'd be able to display custom stuff on the LCD (This time with vanilla hardware, differently from my MT1389 post where I tossed the original board and hooked the VFD to an arduino), decode smart meter signals maybe, and maybe contribute with [Hash](https://recessim.com)'s efforts on reverse engineering smart meters
