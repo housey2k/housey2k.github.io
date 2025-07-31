@@ -127,7 +127,7 @@ Zilog has an application note named [AN0117](/post-docs/an0117.pdf) that explain
 Sean developed software to dump their MCU using a raspberry pi, but they didn't release the full code.
 
 I love hardware, but I'm a terrible programmer, so I just explained all my situation to ChatGPT and managed to build a full STM32CubeIDE project with a bit of intervention by me.
-The code is avaiable on a [GitHub repository on my profile](https://github.com/housey2k/Z8F0421-Dump).
+The code is avaiable on a [GitHub repository on my profile](https://github.com/housey2k/Z8F0421_Dump).
 
 Now the only thing left is buying a breakout board and connecting the STM32 to the Z8.
 
