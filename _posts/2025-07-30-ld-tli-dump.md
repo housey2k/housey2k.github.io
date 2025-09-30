@@ -124,9 +124,8 @@ void loop() {
 Sadly all I got was 0xFF, which means the MCU has read protection enabled. Scrolling further on Sean's post, we can see they also got it, but that isn't the end of it.
 Zilog has an application note named [AN0117](/post-docs/an0117.pdf) that explains how to do gang programming on Z8 microcontrollers using something called the **BYPASS** mode.
 
-Sean developed software to dump their MCU using a raspberry pi, but they didn't release the full code.
+Sean built a kernel driver that was meant to be used on a raspberry pi, but since I don't have one in hands I built my own crude dumper. Untested yet, but available here:
 
-I love hardware, but I'm a terrible programmer, so I just explained all my situation to ChatGPT and managed to build a full STM32CubeIDE project with a bit of intervention by me.
 The code is avaiable on a [GitHub repository on my profile](https://github.com/housey2k/Z8F0421_Dump).
 
 Now the only thing left is buying a breakout board and connecting the STM32 to the Z8.
