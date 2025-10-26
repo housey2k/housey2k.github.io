@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[WIP] Dumping the firmware of a Landis+Gyr reading terminal"
+title: "[Unfinished] Dumping the firmware of a Landis+Gyr reading terminal"
 date: 2025-07-30
 ---
 
@@ -124,10 +124,16 @@ void loop() {
 Sadly all I got was 0xFF, which means the MCU has read protection enabled. Scrolling further on Sean's post, we can see they also got it, but that isn't the end of it.
 Zilog has an application note named [AN0117](/post-docs/an0117.pdf) that explains how to do gang programming on Z8 microcontrollers using something called the **BYPASS** mode.
 
-Sean built a kernel driver that was meant to be used on a raspberry pi, but since I don't have one in hands I built my own crude dumper. Untested yet, but available here:
+Sean built a kernel driver that was meant to be used on a raspberry pi, but since I don't have one in hands I built my own crude dumper. Code avaiable here:
 
-The code is avaiable on a [GitHub repository on my profile](https://github.com/housey2k/Z8F0421_Dump).
+The code is available on a [GitHub repository on my profile](https://github.com/housey2k/Z8F0421_Dump).
 
-Now the only thing left is buying a breakout board and connecting the STM32 to the Z8.
+The thing is: it didn't work. I am a terrible coder, i did my best to follow the flowchart that's on the application note, and couldn't find the issue, this code spits out garbage. Note that I skiped the PB3 sync part because my microcontroller doesn't have PB3.
 
-I really hope it works, I'd be able to display custom stuff on the LCD (This time with vanilla hardware, differently from my MT1389 post where I tossed the original board and hooked the VFD to an arduino), decode smart meter signals maybe, and maybe contribute with [Hash](https://recessim.com)'s efforts on reverse engineering smart meters
+![Flowchart picture](/post-img/LD-TLI-Flowchart-BYPASS.png "Flowchart")
+
+![Breadboard picture](/post-img/LD-TLI-Breadboard.jpg "Breadboard")
+
+![Breakout picture](/post-img/LD-TLI-IC-Breakout.jpg "Breakout")
+
+If anyone reading through this would like to take a look and find the issue, please [email me](mailto:brennomaturino2@gmail.com)
