@@ -4,7 +4,7 @@ title: "[Unfinished] Dumping the firmware of a Landis+Gyr reading terminal"
 date: 2025-07-30
 ---
 
-![TLI Picutre](/post-img/LD-TLI.png "The target of this project")
+![TLI Picture](/post-img/LD-TLI.png "The target of this project")
 
 This whole project started as a curbside find: An abandoned power meter.
 Without much hesitation I picked it up.
@@ -137,3 +137,15 @@ The thing is: it didn't work. I am a terrible coder, i did my best to follow the
 ![Breakout picture](/post-img/LD-TLI-IC-Breakout.jpg "Breakout")
 
 If anyone reading through this would like to take a look and find the issue, please [email me](mailto:brennomaturino2@gmail.com)
+
+While the idea was keeping the original board without replacing anything, turns out it's hell to play with cursed MCUs, so with this and previous projects, I learned a lesson: Not wasting time with shitty microcontrollers
+
+I don't know what makes companies choose shitty microcontrollers that are expensive, locked and worse than an Arduino or STM32, but very likely they are getting these microcontrollers for a crazy discount because no one wants them
+
+With my board with the Z8 chip already removed, i soldered jumper wires to some points of the board to create a little STM32 modchip for it, these points being 5V, LCD_SCL, LCD_SDA, RF_DATA, RF_RSSI, I already have 3.3V and GND from the debug header.
+
+![Modchip points](/post-img/LD-TLI-PCB-Points.jpg)
+
+After writing the firmware available [here](github.com/housey2k/ATA5744N) on my STM32 to decode the data that's being spit out by the RF chip (which seems to be ASK-PWM according to ChatGPT's analisys), I managed to get some data that's either encrypted or it's junk, shown on the image below, sadly i lost the bin file so I gotta do a new capture
+
+![Modchip points](/post-img/LD-TLI-HexData.png)
