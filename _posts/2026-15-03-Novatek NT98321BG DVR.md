@@ -19,7 +19,7 @@ After a lot of searching, I managed to get my hands in several SDKs and document
 
 So this is my research, it was pretty early but was a good foundation. After looking around more, I confirmed that the DVR requires HDAL to work, the linux kernel is crude and doesn't do shit, the drivers also don't do shit when loaded into the kernel, we need to talk to the drivers so they start working, I don't see a reason for that besides making RE harder by not giving you a shell, LCD, or anything. Below there is an image from the SDK docs showing the boot chain, the most critical parts are `/mnt/mtd/vg_boot.sh` call that does `insmod`, and `module_init&` that runs HDAL code to initialize stuff, then give you a framebuffer and a shell, I can't call this vg_boot thing because it is contained inside Sofia, so it does the initialization and goes straight into the app.
 
-![Boot Chain Image](/post_img/NT9832x_SDK_Boot.png)
+![Boot Chain Image](/post-img/NT9832x_SDK_Boot.png)
 
 These are the partitions on my firmware dump:
 "custom": Strings for language, images for app personalization, firmware version, etc (all by branding, not changeable by a normal user)
