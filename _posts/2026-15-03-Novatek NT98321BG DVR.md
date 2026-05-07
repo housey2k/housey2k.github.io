@@ -22,10 +22,15 @@ So this is my research, it was pretty early but was a good foundation. After loo
 ![Boot Chain Image](/post-img/NT9832x_SDK_Boot.png)
 
 These are the partitions on my firmware dump:
+
 "custom": Strings for language, images for app personalization, firmware version, etc (all by branding, not changeable by a normal user)
+
 "logo": Images for U-Boot logo and Sofia boot logo
+
 "romfs": Linux Kernel
+
 "usr": Sofia app compressed, Squirrel scripts, drivers compressed
+
 "web": HTML files, not sure where they are used
 
 More research is available on [Recessim Wiki](https://wiki.recessim.com/view/NT98321BG)
