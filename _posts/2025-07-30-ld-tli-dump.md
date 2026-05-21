@@ -136,7 +136,7 @@ The thing is: it didn't work. I am a terrible coder, i did my best to follow the
 
 ![Breakout picture](/post-img/LD-TLI-IC-Breakout.jpg "Breakout")
 
-If anyone reading through this would like to take a look and find the issue, please [email me](mailto:brennomaturino2@gmail.com)
+If anyone reading through this would like to take a look and find the issue, please contact me on my discord @housey2k
 
 While the idea was keeping the original board without replacing anything, turns out it's hell to play with cursed MCUs, so with this and previous projects, I learned a lesson: Not wasting time with shitty microcontrollers
 
