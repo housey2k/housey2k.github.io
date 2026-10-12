@@ -6,7 +6,7 @@ date: 2026-10-12
 
 ![System of a Down - Hypnotize](/buttons/220px-System_Of_A_Down-Hypnotize.jpg)
 
-![System of a Down - Toxicity](/buttons/220px-SystemofadownToxicityalbumcover.jpg)
+![System of a Down - Toxicity](/buttons/220px-SystemofaDownToxicityalbumcover.jpg)
 
 ![Image](/buttons/764181565359682.avif)
 
